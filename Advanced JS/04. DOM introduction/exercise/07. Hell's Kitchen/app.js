@@ -1,20 +1,20 @@
 function solve() {
    document.querySelector('#btnSend').addEventListener('click', onClick);
-   let input = document.querySelector('textarea');
-   input = JSON.parse(input.value);
-
+   
    function onClick() {
       let restaurants = {};
+      let input = JSON.parse(document.querySelector('textarea').value);
       input.forEach(line => {
          let [restaurant, data] = line.split(' - ');
-         if (!restaurants.hasOwnProperty(restaurant)) {
-            restaurants[restaurant] = {}
+         if (!(restaurant in restaurants)) {
+            restaurants[restaurant] = {};
+            restaurants[restaurant].workers = [];
          }
          let workers = data.split(', ').map(x => x.split(' ').map(y => isNaN(y) ? y : +y));
-         restaurants[restaurant]['workers'] = workers;
-         let avgSalary = workers.map(x => x[1]).reduce((a, b, i, arr) => a + b / arr.length, 0);
+         restaurants[restaurant].workers = [...restaurants[restaurant].workers, ...workers];
+         let avgSalary = restaurants[restaurant].workers.reduce((a, c, i, arr) => a + c[1] / arr.length, 0);
          restaurants[restaurant]['avgSalary'] = avgSalary;
-      })
+      });
       let sorted = Object.entries(restaurants).sort((a, b) => b[1]['avgSalary'] - a[1]['avgSalary']);
       let bestRestaurant = sorted[0];
       let bestRestaurantName = bestRestaurant[0];

@@ -17,16 +17,17 @@
         </select>
         <label for="selectMenuTo">To</label>
         <select id="selectMenuTo">
-            <option selected value="binary">Binary</option>
-            <option selected value="hex">Hexadecimal</option>
+            <option selected value=""></option>
         </select>
-        <button id="convertBtn" onclick="solve()">Convert it</button>
+        <button>Convert it</button>
+
     </div>
     <footer>
         <label for="result">Result</label>
         <input type="text" name="output" id="result" disabled readonly />
     </footer>
-    
+    <script>
+        solve();
+    </script>
 </body>
-
 </html>

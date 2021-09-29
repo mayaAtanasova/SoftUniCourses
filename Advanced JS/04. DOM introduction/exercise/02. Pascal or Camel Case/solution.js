@@ -3,19 +3,13 @@ function solve() {
   const convention = document.getElementById('naming-convention').value;
 
   let conversions = {
-    'Camel Case': (str) => {
-      return str.split(' ')[0] + str.split(' ').slice(1).map(x => capitalize(x)).join('');
-    },
-    'Pascal Case': (str) => {
-      return str.split(' ')
-        .map(x => capitalize(x))
-        .join('');
-    },
-  }
+    'Camel Case': str => str.split(' ')[0] + str.split(' ').slice(1).map(capitalize).join(''),
+    'Pascal Case': str => str.split(' ').map(capitalize).join(''),
+  };
   if (convention === 'Camel Case' || convention === 'Pascal Case') {
     document.getElementById('result').textContent = conversions[convention](text);
   } else {
-    document.getElementById('result').textContent = 'Error!'
+    document.getElementById('result').textContent = 'Error!';
 
   }
 

@@ -3,5 +3,4 @@ function subtract() {
     let secondNr = Number(document.getElementById('secondNumber').value);
     let result = firstNr - secondNr;
     document.getElementById('result').textContent = result;
-    console.log('TODO:...');
 }

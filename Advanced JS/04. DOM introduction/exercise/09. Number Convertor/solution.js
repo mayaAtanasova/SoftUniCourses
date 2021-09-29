@@ -1,38 +1,30 @@
 function solve() {
 
-    let input = Number(document.getElementById('input').value);
+    const selectMenuTo = document.querySelector('#selectMenuTo');
+    // selectMenuTo.options[0] = new Option('Binary', 'binary');
+    // selectMenuTo.options[1] = new Option('Hexadecimal', 'hexadecimal');
     
+    let optionBinary = document.createElement('option');
+    optionBinary.value = 'binary';
+    optionBinary.textContent = 'Binary';
+    
+    let optionHexadecimal = document.createElement('option');
+    optionHexadecimal.value = 'hexadecimal';
+    optionHexadecimal.textContent = 'Hexadecimal';
+    
+    selectMenuTo.appendChild(optionBinary);
+    selectMenuTo.appendChild(optionHexadecimal);
+    
+    let convertBtn = document.querySelector('button');
+    convertBtn.addEventListener('click', () => {
+        const input = Number(document.getElementById('input').value);
+        const result = document.getElementById('result');
 
-    function convertToBinary(nr) {
-        let result = [];
-        while (Math.floor(nr / 2 > 0)) {
-            let base = Math.floor(nr / 2);
-            result.push(nr % 2);
-            nr = base;
+        if (selectMenuTo.value === 'binary') {
+            result.value = input.toString(2);
         }
-        return (result.reverse().join(''));
-    }
-
-    function convertToHex(nr){
-        let result = [];
-        while(Math.floor(nr / 16 > 0)){
-            let base = Math.floor(nr / 16);
-            result.push(nr % 16);
-            nr = base;
+        if (selectMenuTo.value === 'hexadecimal') {
+            result.value = input.toString(16).toUpperCase();
         }
-        result = result.map(x => x < 10 ? x :
-            x == 10 ? 'A' :
-            x == 11 ? 'B' :
-            x == 12 ? 'C' :
-            x == 13 ? 'D' :
-            x == 14 ? 'E' :
-            'F');
-        return result.reverse().join('');
-        }
-        if(document.getElementById('selectMenuTo').value == 'binary'){
-            document.getElementById('result').value = convertToBinary(input);
-        }
-        if(document.getElementById('selectMenuTo').value == 'hex'){
-            document.getElementById('result').value = convertToHex(input);
-        }
+    });
 }
