@@ -1,0 +1,17 @@
+{
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": "unit testing",
+  "main": "01subSum.js",
+  "scripts": {
+    "test": "mocha test",
+    "coverage":"nyc npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "nyc": "^15.1.0"
+  }
+}
