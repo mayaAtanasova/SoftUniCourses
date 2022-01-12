@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+}
+.container {
+  max-width: 980px;
+  margin: auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+header,
+footer {
+  background-color: #b7b8b6;
+  padding: 8px 16px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  vertical-align:middle;
+  height: 60px;
+}
+
+footer {
+  text-align: center;
+}
+
+article.preview {
+  margin: 16px 16px 16px 32px;
+  border-radius: 5px;
+}
+h1 {
+  margin: 16px 0;
+  display: inline-block;
+}
+
+h2 {
+  margin: 8px 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  background-color: #34675C;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  display: inline;
+
+}
+
+.nav-link:hover {
+  cursor:pointer;
+  background-color: #b3c100;
+}
+
+nav div {
+  margin: 0 5px 0 5px;
+}
+.drop {
+  box-shadow: 0 0 15px 5px rgba(49, 49, 49, 0.2);
+
+}
+.splash {
+  padding: 32px 64px;
+  margin: 64px;
+}
+article.preview div {
+  padding: 8px 16px;
+  font-size:80%;
+  color: rgb(94, 93, 93)
+}
+
+article.preview header {
+  border-radius: 5px 5px 0 0 ;
+} 
+
+label {
+  display: block;
+  margin: 8px 0;
+}
+
+label span {
+  display: inline-block;
+  width:120px;
+  text-align: left;
+  vertical-align: top;
+}
+
+label input {
+  width: 200px;
+}
+
+label textarea {
+  width: 300px;
+  height: 200px;
+}
+
+.narrow {
+  width: 400px;
+  margin: 64px auto;
+}
+.center {
+  text-align: center;
+}
+
+.main {
+  margin: 32px;
+}
+
+main p {
+  padding: 20px;
+}
+.action {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #34675C;
+  border: none;
+  color:white;
+  margin: 25px 0 25px 0;
+  text-decoration: none;
+  height: 24px;
+}
+
+.action:hover {
+  cursor: pointer;
+  background-color: #b3c100;
+}
+
+form {
+  margin: 16px 32px;
+}
+
+.error input, .error textarea{
+  border: 1px solid red;
+}
+
+.errormessage {
+  color: red;
+}
+
+.guest{
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+}
